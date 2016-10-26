@@ -14,6 +14,6 @@ public repos:any;
 
   ngOnInit() {
         this._githubservice.GetUser().subscribe(res => {this.userInfo = res});
-         this._githubservice.GetUser().subscribe(res => {this.repos = res});
+         this._githubservice.GetRepos().subscribe(res => {this.repos = res});
   }
 }

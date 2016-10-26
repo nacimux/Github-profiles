@@ -43,7 +43,7 @@
 		<div *ngFor='let repo of repos'>
 			<div class="row">
 				<div class="col-md-9">
-          <h4>{{repo.name}}</h4>
+          <h4><a target="_blank" href="{{repo.html_url}}">{{repo.name}}</a></h4>
           <p>{{repo.description}}</p> 
 				</div>
 
@@ -54,6 +54,6 @@
 
 			</div>
 		</div>
+		<hr>
 	</div>
-</div>
 </div>
