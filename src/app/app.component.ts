@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProfileComponent } from './profile/profile.component';
+import { GithubService } from './shared/services/github.service';
 
 @Component({
   selector: 'app-root',
