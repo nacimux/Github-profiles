@@ -1,0 +1,59 @@
+<div *ngIf="userInfo">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">{{userInfo.name}}</h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-4">
+					<img class='profile-img img-thumbnail' src="{{userInfo.avatar_url}}">
+					<a class='btn btn-default btn-block' href="{{userInfo.html_url}}" target="_blank">View profile</a>
+				</div>
+
+				<div class="col-md-8">
+					<div class='stats'>
+						<span class="label label-primary">{{userInfo.public_repos}} Public Repositories</span>
+						<span class="label label-success">{{userInfo.public_gists}} Public Gists</span>
+						<span class="label label-info">{{userInfo.followers}} Followers</span>
+						<span class="label label-warning">{{userInfo.following}} Following</span>
+					</div>
+					<br>
+					<ul class="list-group">
+						<li class="list-group-item"><strong>Username</strong>{{userInfo.username}}</li>
+						<li class="list-group-item"><strong>Location</strong>{{userInfo.location}}</li>
+						<li class="list-group-item"><strong>Email</strong>{{userInfo.email}}</li>
+						<li *ngIf='userInfo.blog' class="list-group-item"><strong>Blog</strong>{{userInfo.blog}}</li>
+						<li class="list-group-item"><strong>Member since </strong>{{userInfo.created_at}}</li>
+
+
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Repos</h3>
+	</div>
+	<div class="panel-body">
+		<div *ngFor='let repo of repos'>
+			<div class="row">
+				<div class="col-md-9">
+          <h4>{{repo.name}}</h4>
+          <p>{{repo.description}}</p> 
+				</div>
+
+				<div class="col-md-3">
+          <span class="label label-primary">{{repo.watchers}} Watchers</span>
+          <span class="label label-success">{{repo.forks}} Forks</span>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+</div>
