@@ -9,17 +9,18 @@ export class GithubService {
   clientSecret:string = '5397f3377ca615ef3efc7553002940760ccd989a';
 
   constructor(private http: Http) { 
-    this.username = 'nacimux';
   }
 
   GetUser() {
-    return this.http.get('http://api.github.com/users/'+this.username)
+    return this.http.get('http://api.github.com/users/'+this.username+'?client_id='+this.clientID+'&client_secret='+this.clientSecret)
     .map((res) => res.json());
   }
 
   GetRepos() {
-    return this.http.get('http://api.github.com/users/'+this.username+'/repos')
+    return this.http.get('http://api.github.com/users/'+this.username+'/repos?client_id='+this.clientID+'&client_secret='+this.clientSecret)
     .map((res) => res.json());
   }
-
+  updateUser(username:string) {
+    this.username = username;
+  }
 }

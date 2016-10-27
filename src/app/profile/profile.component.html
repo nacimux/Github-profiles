@@ -1,3 +1,12 @@
+<div class="row">
+	<div class="col-md-12">
+		<form>
+			<div class="form-group">
+				<input class='form-control' type="text" placeholder="Search for github users" [(ngModel)] ='username' (keyup)='searchUser()' name='username'>
+			</div>
+		</form>
+	</div>
+</div>
 <div *ngIf="userInfo">
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -19,11 +28,11 @@
 					</div>
 					<br>
 					<ul class="list-group">
-						<li class="list-group-item"><strong>Username</strong>{{userInfo.username}}</li>
-						<li class="list-group-item"><strong>Location</strong>{{userInfo.location}}</li>
-						<li class="list-group-item"><strong>Email</strong>{{userInfo.email}}</li>
-						<li *ngIf='userInfo.blog' class="list-group-item"><strong>Blog</strong>{{userInfo.blog}}</li>
-						<li class="list-group-item"><strong>Member since </strong>{{userInfo.created_at}}</li>
+						<li class="list-group-item"><strong>Username  </strong>{{ userInfo.login}}</li>
+						<li class="list-group-item"><strong>Location  </strong>{{ userInfo.location}}</li>
+						<li class="list-group-item"><strong>Email  </strong>{{ userInfo.email}}</li>
+						<li *ngIf='userInfo.blog' class="list-group-item"><strong>Blog  </strong>{{ userInfo.blog}}</li>
+						<li class="list-group-item"><strong>Member since  </strong>{{ userInfo.created_at}}</li>
 
 
 					</ul>
@@ -32,10 +41,7 @@
 			</div>
 		</div>
 	</div>
-</div>
-
-
-<div class="panel panel-default">
+	<div class="panel panel-default">
 	<div class="panel-heading">
 		<h3 class="panel-title">Repos</h3>
 	</div>
@@ -57,3 +63,6 @@
 		<hr>
 	</div>
 </div>
+</div>
+
+
